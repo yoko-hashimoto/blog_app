@@ -34,12 +34,11 @@ div.container {
 		top: 0;
 		left: 0;
 		font-size: 1.8rem;
-		line-height: 1.5;
-		top: 0px;
-    left: 0px;
-    
+    position: fixed;
+    z-index: 100;
 
-    width: 1419px; /* ヘッダー 幅を指定*/
+    
+    // width: 1419px; /* ヘッダー 幅を指定*/
     margin:0 auto;
 
 
