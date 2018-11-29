@@ -1,25 +1,57 @@
-<h1>Blog List</h1>
+<div class="container">
 
-<p><%= notice%></p>
+  <h1>Blog List</h1>
 
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-  
-  <% @blogs.each do |blog| %>
-    <tr>
-      <td><%= blog.title %></td>
-      <td><%= blog.content %></td>
-      <td><%= link_to '詳細を確認する',  blog_path(blog.id) %></td>
-      <td><%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？'} %></td>
-      <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
-    </tr>
-  <% end %>
-  
-</table>
+  <p><%= notice%></p>
+ 
+  <table class="content">
+    <%# <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr> %>
 
-<br>
 
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td colspan="2"><%= link_to blog.title, blog_path(blog.id) %> </td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= blog.content %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= blog.created_at.strftime("%Y-%m-%d %H:%M ") %></td>
+      </tr>
+      <!-- <tr><td><%= link_to '詳細',  blog_path(blog.id) %></td></tr> -->
+      <tr>
+        <div class="button_wrapper">
+          <div class="btn-group" role="group" aria-label="...">
+              <td>
+                <div class="delete_button">
+                  <button type="button" class="btn btn-default"><%= link_to 'delete', blog_path(blog.id), method: :delete, 
+                    data: { confirm: '本当に削除していいですか？'} %></button>
+                </div>
+              </td>
+              <td>
+                <div class="edit_button">
+                  <button type="button" class="btn btn-default"><%= link_to "edit", edit_blog_path(blog.id), 
+                    data: { confirm: '本当に編集していいですか？'} %></button>
+                </div>
+              </td>
+          </div>
+        </div>
+      </tr>
+    <% end %>
+  </table>
+
+  <br>
+
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default"><%= link_to 'Create New', new_blog_path %></button>
+  </div>
+
+</div>

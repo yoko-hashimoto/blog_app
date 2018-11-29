@@ -1,0 +1,38 @@
+.container {
+	margin: 0 auto;
+}
+
+// table {
+// 	margin: 0 auto;
+// 	border-collapse: collapse;
+// 	border: solid 1px black;
+// }
+
+td {
+	border:0;
+}
+
+.content {
+  /* table(Hitokoto一覧)を左右中央寄せにする */
+  margin: auto;
+  /* ボタンの下に線を表示させる為の処理 */
+  border-collapse: collapse;
+  background-color: #F5F5F5;
+  table-layout: fixed;
+  width: 100%;
+	word-wrap: break-word;
+}
+
+.button_wrapper {
+	text-align: left;
+}
+
+.delete_button {
+	text-align: right;
+	margin-right: 20px;
+}
+
+.edit_button {
+	text-align: left;
+	margin-left: 20px;
+}

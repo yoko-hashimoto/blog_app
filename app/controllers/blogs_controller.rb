@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.order(updated_at: "DESC")
   end
 
   def new
