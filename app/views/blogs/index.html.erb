@@ -9,7 +9,8 @@
     <div class="row">
    
       <% @blogs.each do |blog| %>
-        <div class="col-md-6 post">
+        <div class="col-md-6">
+        <div class="post">
           <div>
             <%= link_to blog.title, blog_path(blog.id) %> 
           </div>
@@ -30,6 +31,7 @@
             </div>
           </div>
         </div>
+        </div>
       <% end %>
     </div>
   </div>
@@ -37,7 +39,7 @@
   <br>
 
   <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-default"><%= link_to 'Create New', new_blog_path %></button>
+    <button type="button" class="btn btn-default"><%= link_to 'Create new', new_blog_path %></button>
   </div>
 
 </div>

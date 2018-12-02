@@ -7,37 +7,27 @@ td {
 }
 
 .content {
-  /* table(Hitokoto一覧)を左右中央寄せにする */
-  margin: 0 auto;
-  /* ボタンの下に線を表示させる為の処理 */
-  border-collapse: collapse;
-//   background-color: #F5F5F5;
-  table-layout: fixed;
+	margin: 50px auto;
   width: 100%;
   word-wrap: break-word;
 }
 
 .delete_button {
-	// text-align: center;
 	margin: 10px;
 	display: inline-block;
 }
 
 .edit_button {
-	// text-align: center;
 	margin: 10px;
 	display: inline-block;
 }
 
 .post {
-	padding: 0.5em 1em;
-	// margin: 2em 0;
-	margin: 5px;
-	font-weight: bold;
 	color: #6091d3;/*文字色*/
-	background: #FFF;
+	background-color: #FFF;
 	border: solid 3px #6091d3;/*線*/
 	border-radius: 10px;/*角の丸み*/
 	color: #708090;
-	width: 450px;
+	padding: 15px;
+	margin-bottom:10px;
 }
