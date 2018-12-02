@@ -27,7 +27,7 @@
 	padding:5px 10px;
   text-decoration :none;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-	transition: .3s;
+	/* transition: .3s; */
 	border-radius: 5px;
 }
 
