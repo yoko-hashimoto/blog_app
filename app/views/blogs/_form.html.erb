@@ -1,29 +1,39 @@
-<%= form_with(model: @blog, local: true,  url: choose_new_or_edit) do |form| %>
-  <% if @blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
-      
-      <ul>
-        <% @blog.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+<div class="container">
+
+  <p><%= notice%></p>
+
+  <%= form_with(model: @blog, local: true,  url: choose_new_or_edit) do |form| %>
+    <% if @blog.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+        
+        <ul>
+          <% @blog.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="post_content_wrapper">
+      <div class="post_content">
+        <div class="blog_title">
+          <div><%= form.label :title %></div>
+          <div><%= form.text_field :title %></div>
+        </div>
+        <div class="blog_content">
+          <div><%= form.label :content %></div>
+          <div><%= form.text_area :content, placeholder: "Today's event" %></div>
+        </div>
+        <%= form.submit %>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
 
-  <div class="blog_title">
-    <div><%= form.label :title %></div>
-    <div><%= form.text_field :title %></div>
+  <br>
+
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default"><%= link_to "Back", blogs_path %></button>
   </div>
-  <div class="blog_title">
-    <div><%= form.label :content %></div>
-    <div><%= form.text_field :content %></div>
-  </div>
-  <%= form.submit %>
-<% end %>
 
-<br>
-
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default"><%= link_to "Back", blogs_path %></button>
 </div>
