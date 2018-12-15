@@ -1,9 +1,9 @@
-  <p><%= notice%></p>
+
 
   <%= form_with(model: @blog, local: true,  url: choose_new_or_edit) do |form| %>
     <% if @blog.errors.any? %>
       <div id="error_explanation">
-        <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+        <h5><%= @blog.errors.count %>件のエラーがあります。</h5>
         
         <ul>
           <% @blog.errors.full_messages.each do |msg| %>
@@ -19,6 +19,7 @@
           <div><%= form.label :title %></div>
           <div><%= form.text_field :title %></div>
         </div>
+        <br>
         <div class="blog_content">
           <div><%= form.label :content %></div>
           <div><%= form.text_area :content, placeholder: "Today's event" %></div>

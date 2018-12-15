@@ -38,17 +38,15 @@
             <ul class="nav navbar-nav">
               <li><a href="/blogs/top">Top</a></li>
               <li><a href="/blogs">Blog list</a></li>
-              <li><a href="/blogs/new">Create new</a></li>
-
 
               <% if logged_in? %>
+                <li><a href="/blogs/new">Create new</a></li>
                 <li><%= link_to "Profile", user_path(current_user.id) %></li>
                 <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
               <% else %>
                 <li><%= link_to "Sign up", new_user_path %></li>
                 <li><%= link_to "Login", new_session_path %></li>
               <% end %>
-
 
             </ul>
           </div>
@@ -59,8 +57,6 @@
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
-      
-      
 
     <%= yield %>
 
