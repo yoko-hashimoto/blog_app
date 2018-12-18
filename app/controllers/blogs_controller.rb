@@ -21,6 +21,8 @@ class BlogsController < ApplicationController
     @blog = Blog.create(blog_params)
     # バリデーションが成功したら
     if @blog.save
+    #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
+    @blog.user_id = current_user.id 
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示する。
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
@@ -50,6 +52,8 @@ class BlogsController < ApplicationController
   
   def confirm
     @blog = Blog.new(blog_params)
+    #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
+    @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
   
