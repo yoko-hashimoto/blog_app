@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all.order(updated_at: "DESC")
+    
   end
 
   def new
@@ -18,11 +19,12 @@ class BlogsController < ApplicationController
   end
   
   def create
-    @blog = Blog.create(blog_params)
+    # ログイン中のユーザーの、blogを、build(new)する
+    @blog = current_user.blogs.build(blog_params)
+
     # バリデーションが成功したら
     if @blog.save
-    #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
-    @blog.user_id = current_user.id 
+      
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示する。
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
@@ -32,6 +34,8 @@ class BlogsController < ApplicationController
   end
   
   def show
+    set_blog
+    @user = User.find_by(id: @blog.user_id)
   end
   
   def edit
@@ -51,9 +55,8 @@ class BlogsController < ApplicationController
   end
   
   def confirm
-    @blog = Blog.new(blog_params)
-    #現在ログインしているuserのidを、blogのuser_idカラムに挿入する
-    @blog.user_id = current_user.id
+    # ログイン中のユーザーの、blogを、build(new)する
+    @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
   end
   
