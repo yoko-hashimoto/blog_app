@@ -5,4 +5,23 @@
   <h1><%= @user.name %>のページ</h1>
 
   <p>メールアドレス: <%= @user.email %></p>
+
+  <p>お気に入りリスト<p>
+    <%= @favorites_blogs. each do |favorites_blog| %>
+      <div>
+      <%= favorites_blog.title%>
+      </div>
+      <div>
+      <%= favorites_blog.content %>
+      </div>
+      <div>
+      <%= favorites_blog.user.name %>
+      </div>
+      <div>
+      <%= favorites_blog.created_at.strftime("%Y-%m-%d %H:%M ") %>
+      </div>
+
+    <% end %>
+
+
 </div>

@@ -32,10 +32,17 @@ class BlogsController < ApplicationController
       render 'new'
     end
   end
+
+  def confirm
+    # ログイン中のユーザーの、blogを、build(new)する
+    @blog = current_user.blogs.build(blog_params)
+    render :new if @blog.invalid?
+  end
   
   def show
     set_blog
     @user = User.find_by(id: @blog.user_id)
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
   
   def edit
@@ -52,12 +59,6 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     redirect_to blogs_path, notice:"ブログを削除しました！"
-  end
-  
-  def confirm
-    # ログイン中のユーザーの、blogを、build(new)する
-    @blog = current_user.blogs.build(blog_params)
-    render :new if @blog.invalid?
   end
   
   private
