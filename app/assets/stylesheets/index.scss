@@ -32,6 +32,16 @@ td {
 	margin-bottom:10px;
 }
 
+.profile_blog_title {
+	font-size: 150%;
+	color: #6091d3;
+}
+
+.blog_content {
+	font-size: 130%;
+	// text-align: left;
+}
+
 .user_name {
 	display: inline-block;
 	margin-right: 10px;
@@ -40,4 +50,5 @@ td {
 .date {
 	display: inline-block;
 	margin-left: 10px;
+	margin-bottom: 10px;
 }

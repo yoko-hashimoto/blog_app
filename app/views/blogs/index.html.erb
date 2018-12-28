@@ -8,14 +8,13 @@
    
       <% @blogs.each do |blog| %>
         <div class="col-md-6">
-        <div class="post">
-          <div>
-            <%= link_to blog.title, blog_path(blog.id) %> 
-          </div>
-          <div>
-            <%= blog.content %>
-          </div>
-          <div>
+          <div class="post">
+            <div class="profile_blog_title">
+              <%= link_to blog.title, blog_path(blog.id) %>
+            </div>
+            <div class="blog_content">
+              <%= blog.content %>
+            </div>
             <div class="user_name">
               <%= blog.user.name %>
             </div>
@@ -23,19 +22,6 @@
               <%= blog.created_at.strftime("%Y-%m-%d %H:%M ") %>
             </div>
           </div>
-          
-          <!-- <div class="btn-group" role="group" aria-label="...">
-            <div class="delete_button">
-              <button type="button" class="btn btn-default"><%= link_to 'delete', blog_path(blog.id), method: :delete, 
-                data: { confirm: '本当に削除していいですか？'} %></button>
-            </div>
-            <div class="edit_button">
-              <button type="button" class="btn btn-default"><%= link_to "edit", edit_blog_path(blog.id), 
-                data: { confirm: '本当に編集していいですか？'} %></button>
-            </div>
-          </div> -->
-
-        </div>
         </div>
       <% end %>
     </div>
