@@ -6,15 +6,17 @@
           <%= form.hidden_field :title %>
           <%= form.hidden_field :content %>
           
-          <div class="blog_title">
-            <p>Title</p>
-            <%= @blog.title %>
+          <div class="confirm_content">
+            <div >
+              <p class="confirm_title_label">Title</p>
+              <%= @blog.title %>
+            </div>
+            <br>
+            <div>
+              <p class="confirm_content_label">Content</p>
+              <%= @blog.content %>
+            </div>
           </div>
-          <div class="blog_content">
-            <p>Content</p>
-            <%= @blog.content %>
-          </div>
-          <br>
           <%= form.submit "Post" %>
         <% end %>
 

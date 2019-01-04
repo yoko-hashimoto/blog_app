@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   root to: 'blogs#top'
   
   resources :users
@@ -12,7 +14,5 @@ Rails.application.routes.draw do
       get :top
     end
   end
-
-  
   
 end

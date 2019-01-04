@@ -9,7 +9,7 @@
       <% @blogs.each do |blog| %>
         <div class="col-md-6">
           <div class="post">
-            <div class="profile_blog_title">
+            <div class="blog_title">
               <%= link_to blog.title, blog_path(blog.id) %>
             </div>
             <div class="blog_content">

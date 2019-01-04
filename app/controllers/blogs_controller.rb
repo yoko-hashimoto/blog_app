@@ -22,15 +22,31 @@ class BlogsController < ApplicationController
     # ログイン中のユーザーの、blogを、build(new)する
     @blog = current_user.blogs.build(blog_params)
 
-    # バリデーションが成功したら
-    if @blog.save
+    # respond_to do |format|
+      # バリデーションが成功したら
+      if @blog.save
+        BlogMailer.blog_mail(@blog).deliver  ##追記
+        # redirect_to @blog, notice: 'Blog was successfully created.'
+        # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示する。
+        redirect_to blogs_path, notice: "ブログを作成しました！"
+      else
+        # 入力フォームを再描画する。
+        render :new
+      end
+    # end
+
+
+
+
+    # # バリデーションが成功したら
+    # if @blog.save
       
-      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示する。
-      redirect_to blogs_path, notice: "ブログを作成しました！"
-    else
-      # 入力フォームを再描画する。
-      render 'new'
-    end
+    #   # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示する。
+    #   redirect_to blogs_path, notice: "ブログを作成しました！"
+    # else
+    #   # 入力フォームを再描画する。
+    #   render 'new'
+    # end
   end
 
   def confirm

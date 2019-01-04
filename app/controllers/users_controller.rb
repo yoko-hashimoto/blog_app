@@ -17,7 +17,11 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@favorites_blogs = @user.favorite_blogs
+		# @favorites_blogs = @user.favorite_blogs
+
+
+    @favorites = @user.favorites
+    @favorites_blogs = @user.favorite_blogs
 	end
 
 	private

@@ -1,3 +1,5 @@
+
+
   <%= form_with(model: @blog, local: true,  url: choose_new_or_edit) do |form| %>
     <% if @blog.errors.any? %>
       <div id="error_explanation">
@@ -13,13 +15,13 @@
     
     <div class="post_content_wrapper">
       <div class="post_content">
-        <div class="blog_title">
-          <div><%= form.label :title %></div>
-          <div><%= form.text_field :title %></div>
+        <div>
+          <div><%= form.label :title, class:"form_title_label" %></div>
+          <div><%= form.text_field :title, class:"form_text_field" %></div>
         </div>
         <br>
-        <div class="blog_content">
-          <div><%= form.label :content %></div>
+        <div>
+          <div><%= form.label :content, class:"form_content_label" %></div>
           <div><%= form.text_area :content, placeholder: "Today's event" %></div>
         </div>
         <%= form.submit %>

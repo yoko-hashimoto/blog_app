@@ -13,7 +13,7 @@
         <% @favorites_blogs. each do |favorites_blog| %>
           <div class="col-md-6">
             <div class="post">
-              <div class="profile_blog_title">
+              <div class="blog_title">
               <%= favorites_blog.title %>
               </div>
               <div class="blog_content">
@@ -26,9 +26,9 @@
               <%= favorites_blog.created_at.strftime("%Y-%m-%d %H:%M ") %>
               </div>
 
-              <!-- <div>
-                  <%= link_to 'Favorite Cancel', favorite_path(id: favorites_blog.id), method: :delete, class: 'btn btn-danger' %>
-              </div> -->
+              <div>
+                  <%= link_to 'Favorite Cancel', favorite_path(id: @favorites.find_by(blog_id: favorites_blog.id).id), method: :delete, class: 'btn btn-danger' %>
+              </div>
 
             </div>
           </div>
