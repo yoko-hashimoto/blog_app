@@ -27,8 +27,8 @@ class BlogsController < ApplicationController
       if @blog.save
         BlogMailer.blog_mail(@blog).deliver  ##追記
         # redirect_to @blog, notice: 'Blog was successfully created.'
-        # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示する。
-        redirect_to blogs_path, notice: "ブログを作成しました！"
+        # 一覧画面へ遷移して"ブログを投稿しました！"とメッセージを表示する。
+        redirect_to blogs_path, notice: "ブログを投稿しました！"
       else
         # 入力フォームを再描画する。
         render :new
@@ -36,12 +36,10 @@ class BlogsController < ApplicationController
     # end
 
 
-
-
     # # バリデーションが成功したら
     # if @blog.save
       
-    #   # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示する。
+    #   # 一覧画面へ遷移して"ブログを投稿しました！"とメッセージを表示する。
     #   redirect_to blogs_path, notice: "ブログを作成しました！"
     # else
     #   # 入力フォームを再描画する。
