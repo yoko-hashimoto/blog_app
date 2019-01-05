@@ -2,12 +2,8 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :login_check, only: [:new, :edit, :show, :destroy]
 
-  def top
-  end
-
   def index
     @blogs = Blog.all.order(updated_at: "DESC")
-    
   end
 
   def new
