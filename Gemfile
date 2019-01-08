@@ -61,3 +61,8 @@ gem 'bcrypt', '3.1.11'
 group :development do
   gem 'letter_opener_web'
 end
+
+gem 'faker'
+
+gem 'carrierwave'
+gem 'mini_magick'

@@ -1,8 +1,9 @@
 <h1>ブログ詳細画面</h1>
   <div>
-    <p>タイトル: <%= @blog.title %></p>
-    <p>内容: <%= @blog.content %></p>
-    <p>投稿者: <%= @user.name %></p>
+    <p>title: <%= @blog.title %></p>
+    <p>content: <%= @blog.content %></p>
+    <p>contributor: <%= @user.name %></p>
+    <p>image: <%= image_tag @blog.image.url %></p>
   </div>
 
 <div>

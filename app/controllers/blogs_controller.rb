@@ -74,7 +74,7 @@ class BlogsController < ApplicationController
   private
   
   def blog_params
-  params.require(:blog).permit(:title, :content)
+  params.require(:blog).permit(:title, :content, :image, :image_cache)
   end
   
   # idをキーとして値を取得するメソッド
@@ -87,5 +87,6 @@ class BlogsController < ApplicationController
 			flash[:alert] = "ログインしてください"
 			redirect_to new_session_path
 		end
-	end
+  end
+
 end
