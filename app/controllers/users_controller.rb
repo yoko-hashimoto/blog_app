@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		# @favorites_blogs = @user.favorite_blogs
 
+		
 
     @favorites = @user.favorites
     @favorites_blogs = @user.favorite_blogs

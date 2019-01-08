@@ -6,6 +6,11 @@
 
     <p>メールアドレス: <%= @user.email %></p>
 
+    <p>
+      <strong>Image:</strong>
+      <%= image_tag @user.image.url %>
+    </p>
+
     <h3>Favorite Lists</h3>
 
     <div class="content">
