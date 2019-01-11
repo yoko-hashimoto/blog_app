@@ -3,7 +3,8 @@ class Blog < ApplicationRecord
   validates :title, presence: true
   #1文字以上140文字以下しか投稿できないようバリデーションを定義する
   validates :content, length: { in: 1..140 }
-  
+  validates :image, presence: true
+
   belongs_to :user
 
   has_many :favorites, dependent: :destroy

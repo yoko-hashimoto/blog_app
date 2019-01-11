@@ -29,6 +29,7 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 	/* transition: .3s; */
 	border-radius: 5px;
+	color: #337ab7;
 }
 
 .btn-default:hover {

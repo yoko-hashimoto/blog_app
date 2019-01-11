@@ -4,12 +4,11 @@
 
     <h1><%= @user.name %>のページ</h1>
 
-    <p>メールアドレス: <%= @user.email %></p>
-
     <p>
-      <strong>Image:</strong>
-      <%= image_tag @user.image.url %>
+      <%= image_tag @user.icon.url %>
     </p>
+
+    <p>メールアドレス: <%= @user.email %></p>
 
     <h3>Favorite Lists</h3>
 

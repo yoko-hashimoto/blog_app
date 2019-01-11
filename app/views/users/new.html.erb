@@ -17,27 +17,32 @@
   <%= form_with(model: @user, local: true) do |f| %>
     <div>
       <%= f.label :name %>
+      <br>
       <%= f.text_field :name %>
     </div>
 
     <div>
       <%= f.label :email %>
+      <br>
       <%= f.email_field :email %>
     <div>
 
     <div>
       <%= f.label :password %>
+      <br>
       <%= f.password_field :password %>
     </div>
 
     <div>
       <%= f.label :password_confirmation %>
+      <br>
       <%= f.password_field :password_confirmation %>
     </div>
 
     <div>
-      <%= f.label :image %>
-      <%= f.file_field :image %>
+      <%= f.label :icon %>
+      <br>
+      <%= f.file_field :icon, class:"image_file" %>
     </div>
 
     <%= f.submit "Create my account" %>

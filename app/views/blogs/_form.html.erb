@@ -25,13 +25,14 @@
           <div><%= form.text_area :content, placeholder: "Today's event" %></div>
         </div>
         <div>
+         <br>
           <div><%= form.label :image %></div>
           <!-- 確認画面から新規作成画面に戻った時に、 -->
           <!-- アップロードした画像を表示させるための記述 -->
           <div><%= image_tag(@blog.image.url) if @blog.image.url %></div>
-          <div><%= form.file_field :image %></div>
+          <div><%= form.file_field :image, class:"image_file" %></div>
         </div>
-        <%= form.submit %>
+        <%= form.submit "Confirm", class: "btn btn-default" %>
         <% end %>
       </div>
     </div>
