@@ -16,17 +16,17 @@
     <div class="post_content_wrapper">
       <div class="post_content">
         <div>
-          <div><%= form.label :title, class:"form_title_label" %></div>
+          <div><%= form.label :title, class:"form_label" %></div>
           <div><%= form.text_field :title, class:"form_text_field" %></div>
         </div>
         <br>
         <div>
-          <div><%= form.label :content, class:"form_content_label" %></div>
+          <div><%= form.label :content, class:"form_label" %></div>
           <div><%= form.text_area :content, placeholder: "Today's event" %></div>
         </div>
         <div>
          <br>
-          <div><%= form.label :image %></div>
+          <div><%= form.label :image, class:"form_label" %></div>
           <!-- 確認画面から新規作成画面に戻った時に、 -->
           <!-- アップロードした画像を表示させるための記述 -->
           <div><%= image_tag(@blog.image.url) if @blog.image.url %></div>
